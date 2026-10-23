@@ -1,0 +1,54 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a Wi-Fi camera",
+        "description": "Paste the camera's streaming link (RTSP, RTMP, HLS .m3u8 or HTTP MJPEG). Example: rtsp://192.168.1.50:554/stream1",
+        "data": {
+          "name": "Camera name",
+          "stream_url": "Stream URL",
+          "snapshot_url": "Snapshot URL (optional)",
+          "username": "Username (optional)",
+          "password": "Password (optional)",
+          "rtsp_transport": "RTSP transport",
+          "verify_ssl": "Verify SSL certificate",
+          "test_connection": "Test the stream before saving"
+        },
+        "data_description": {
+          "stream_url": "The live video link. Credentials can be in the URL or entered below.",
+          "snapshot_url": "An http(s) link that returns a JPEG. Faster thumbnails; leave empty to grab frames from the stream.",
+          "rtsp_transport": "TCP is the most reliable for Wi-Fi cameras."
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "The stream URL must start with rtsp://, rtsps://, rtmp://, http:// or https://",
+      "invalid_snapshot_url": "The snapshot URL must start with http:// or https://",
+      "cannot_connect": "Couldn't read a frame from the stream. Check the URL, credentials and that the camera is reachable from Home Assistant."
+    },
+    "abort": {
+      "already_configured": "This camera is already added."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Camera settings",
+        "data": {
+          "stream_url": "Stream URL",
+          "snapshot_url": "Snapshot URL (optional)",
+          "username": "Username (optional)",
+          "password": "Password (optional)",
+          "rtsp_transport": "RTSP transport",
+          "verify_ssl": "Verify SSL certificate",
+          "test_connection": "Test the stream before saving"
+        }
+      }
+    },
+    "error": {
+      "invalid_url": "The stream URL must start with rtsp://, rtsps://, rtmp://, http:// or https://",
+      "invalid_snapshot_url": "The snapshot URL must start with http:// or https://",
+      "cannot_connect": "Couldn't read a frame from the stream. Check the URL, credentials and that the camera is reachable from Home Assistant."
+    }
+  }
+}
